@@ -22,12 +22,12 @@ def get_args():
     parser.add_argument(
         "--yolox_model",
         type=str,
-        default='model/yolox_nano.onnx',
+        default='model/object_detection_yolox_2022nov.onnx',
     )
     parser.add_argument(
         '--input_shape',
         type=str,
-        default="416,416",
+        default="640,640",
         help="Specify an input shape for inference.",
     )
     parser.add_argument(
