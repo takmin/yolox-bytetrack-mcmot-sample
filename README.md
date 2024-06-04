@@ -71,6 +71,58 @@ Large P6モデルを使用するか否か<br>
 ※パラメータ詳細は[ByteTrack](https://github.com/ifzhang/ByteTrack)を参照ください。
 </details>
 
+# CSV/動画出力
+動画入力に対して、CSVファイルおよび動画ファイルを出力するデモの実行方法は以下です。
+```bash
+python proc_movie.py --input test.mp4 --output result.mp4 --csv result.csv
+```
+* --input<br>
+入力動画ファイルパス（必須）
+* --output<br>
+出力動画ファイル名の指定。inputで指定した動画に検出結果を描画してmp4ファイルとして出力。<br>
+デフォルト：指定なし
+* --csv<br>
+各フレームごとの物体検出結果を出力するCSVファイルを指定。<br>
+デフォルト：output.csv
+<details>
+<summary>YOLOXパラメータ</summary>
+  
+* --yolox_model<br>
+ロードするモデルの格納パス<br>
+デフォルト：model/object_detection_yolox_2022nov.onnx
+* --input_shape<br>
+モデルの入力サイズ<br>
+デフォルト：640,640
+* --score_th<br>
+クラス判別の閾値<br>
+デフォルト：0.3
+* --nms_th<br>
+NMSの閾値<br>
+デフォルト：0.45
+* --nms_score_th<br>
+NMSのスコア閾値<br>
+デフォルト：0.1
+* --with_p6<br>
+Large P6モデルを使用するか否か<br>
+デフォルト：指定なし
+</details>
+
+<details>
+<summary>ByteTrackパラメータ</summary>
+  
+* --track_thresh<br>
+デフォルト：0.5
+* --track_buffer<br>
+デフォルト：30
+* --match_thresh<br>
+デフォルト：0.8
+* --min_box_area<br>
+デフォルト：10
+* --mot20<br>
+デフォルト：指定なし
+  
+※パラメータ詳細は[ByteTrack](https://github.com/ifzhang/ByteTrack)を参照ください。
+</details>
 
 # Reference
 * [Megvii-BaseDetection/YOLOX](https://github.com/Megvii-BaseDetection/YOLOX)
